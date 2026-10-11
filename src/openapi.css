@@ -1,0 +1,14 @@
+.openapi-import>p { font-size:12px; line-height:1.6; color:var(--feature-text); }
+.openapi-import .openapi-hint { color:var(--feature-muted); font-size:11px; }
+.openapi-import .openapi-base input,.openapi-preview>label input { display:block; width:100%; padding:10px 12px; margin-top:8px; border:1px solid var(--feature-border); border-radius:6px; background:var(--feature-bg); color:var(--feature-text); font:12px 'IBM Plex Mono',monospace; }
+.openapi-stats { display:flex; flex-wrap:wrap; gap:10px 18px; font-size:11px; color:var(--feature-muted); margin:18px 0; }
+.openapi-stats strong { color:var(--feature-accent); font-size:15px; margin-right:4px; }
+.openapi-preview .import-requests { padding:0; list-style:none; max-height:220px; }
+.openapi-preview .import-requests li { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-bottom:1px solid var(--feature-border); }
+.openapi-preview .import-requests li>div { min-width:0; }
+.openapi-preview .import-requests strong { display:block; color:var(--feature-text); font-weight:500; }
+.openapi-preview .import-requests code { display:block; font:10px/1.7 'IBM Plex Mono',monospace; color:var(--feature-muted); overflow-wrap:anywhere; }
+.openapi-method { width:49px; flex:none; font:600 10px/1.9 'IBM Plex Mono',monospace; }
+.openapi-preview details { font-size:11px; }
+.openapi-preview details summary { cursor:pointer; line-height:1.6; }
+.openapi-preview details ul { max-height:160px; overflow:auto; overflow-wrap:anywhere; }

@@ -1,0 +1,13 @@
+.connection-settings { border: 1px solid var(--feature-border); border-radius: 8px; margin: 22px 0 10px; padding: 16px; min-width: 0; }
+.connection-settings legend { color: var(--feature-text); font-size: 12px; padding: 0 6px; }
+.connection-settings legend span { color: var(--feature-muted); font-size: 10px; margin-left: 6px; }
+.connection-settings>label, .connection-proxy label, .connection-identity label { display: flex; flex-direction: column; gap: 8px; min-width: 0; color: var(--feature-text); font-size: 11px; margin: 12px 0; }
+.connection-proxy { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
+.connection-identity { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.connection-settings input:not([type=checkbox]), .connection-settings textarea { width: 100%; min-width: 0; border: 1px solid var(--feature-border); border-radius: 6px; padding: 9px; color: var(--feature-text); background: var(--feature-bg); font-family: 'IBM Plex Mono', monospace; font-size: 11px; box-sizing: border-box; }
+.connection-settings textarea { min-height: 100px; resize: vertical; }
+.connection-settings:disabled { opacity: .7; }
+.connection-settings>label.check-label { flex-direction: row; align-items: center; }
+.connection-settings .secret-pem { -webkit-text-security: disc; }
+.connection-clear { border: 1px solid var(--feature-border); color: var(--feature-text); border-radius: 6px; padding: 8px 12px; font-size: 11px; }
+@media (max-width: 900px) { .connection-proxy, .connection-identity { grid-template-columns: 1fr; gap: 0; } }

@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Reqmas feature check
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:58808
+paths:
+  /items:
+    get:
+      summary: Get item
+      tags: [Items]
+      parameters:
+        - name: caseId
+          in: query
+          required: true
+          schema: {type: integer}
+          example: 1
+      responses:
+        '200':
+          description: An item
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/Item'}
+  /bad-item:
+    get:
+      summary: Invalid item
+      tags: [Items]
+      responses:
+        '200':
+          description: Deliberately invalid data for checking schema errors
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/Item'}
+  /download:
+    get:
+      summary: Download binary
+      tags: [Files]
+      responses:
+        '200':
+          description: Original binary bytes
+          content:
+            application/octet-stream:
+              schema: {type: string, format: binary}
+components:
+  schemas:
+    Item:
+      type: object
+      required: [id, name, enabled]
+      properties:
+        id: {type: integer}
+        name: {type: string}
+        enabled: {type: boolean}

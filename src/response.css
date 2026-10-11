@@ -1,0 +1,36 @@
+.advanced-response { --response-paper:#fbfcfe; --response-line:#e3e9f0; --response-ink:#3c4e64; --response-muted:#7d8b9f; --response-accent:#2856a6; --response-string:#23805e; --response-number:#b56a1d; }
+[data-theme="dark"] .advanced-response { --response-paper:#121c25; --response-line:#2a3a4b; --response-ink:#cdd7e5; --response-muted:#97a9bd; --response-accent:#8ebdfa; --response-string:#8ed3af; --response-number:#e8be7b; }
+.response-view-tabs { display:flex; gap:2px; flex-wrap:wrap; }
+.advanced-response .response-tools { flex-wrap:wrap; }
+.response-subtools { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:12px 16px; border-bottom:1px solid var(--response-line); color:var(--response-muted); font-size:11px; }
+.response-subtools button { font-size:11px; padding:5px 8px; color:var(--response-accent); }
+.response-subtools select { min-width:180px; max-width:550px; flex:1; min-height:34px; padding:7px 10px; border:1px solid var(--response-line); border-radius:5px; background:var(--response-paper); color:var(--response-ink); font-size:11px; }
+.json-tree-view, .response-compare { background:var(--response-paper); color:var(--response-ink); }
+.json-tree { max-height:420px; overflow:auto; padding:9px 0; font:11px/1.9 'IBM Plex Mono',monospace; }
+.json-tree-row { display:flex; align-items:center; gap:9px; min-height:33px; padding-right:12px; }
+.json-tree-row:hover, .json-tree-row:focus-within { background:color-mix(in srgb,var(--response-accent) 7%,transparent); }
+.json-tree-row .tree-toggle { padding:0; width:16px; flex-shrink:0; font-size:13px; color:var(--response-muted); }
+.tree-key { color:var(--response-accent); max-width:250px; overflow-wrap:anywhere; }
+.tree-value { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:35px; }
+.tree-string { color:var(--response-string); }.tree-number { color:var(--response-number); }.tree-null, .tree-boolean { color:#9576b7; }
+.tree-actions { display:flex; gap:5px; margin-left:auto; flex-shrink:0; opacity:.45; }
+.json-tree-row:hover .tree-actions, .json-tree-row:focus-within .tree-actions { opacity:1; }
+.tree-actions button { font:10px 'IBM Plex Mono',monospace; color:var(--response-muted); border:1px solid var(--response-line); border-radius:4px; padding:4px 7px; }
+.response-warning { margin:0; padding:12px 16px; background:#b3832410; color:var(--response-muted); font-size:11px; line-height:1.6; overflow-wrap:anywhere; border-top:1px solid var(--response-line); }
+.response-message { padding:32px 20px; text-align:center; color:var(--response-muted); font-size:12px; line-height:1.7; }
+.response-explanation { margin:0; padding:10px 16px; font-size:10px; color:var(--response-muted); line-height:1.7; }
+.response-diff-summary { padding:12px 16px; font-size:12px; border-bottom:1px solid var(--response-line); }
+.response-diff-table { max-height:420px; overflow:auto; font:11px/1.8 'IBM Plex Mono',monospace; }
+.response-diff-head, .response-diff-row { display:grid; grid-template-columns:1fr 1fr 1fr; }
+.response-diff-head { position:sticky; top:0; background:var(--response-paper); color:var(--response-muted); border-bottom:1px solid var(--response-line); font-size:10px; }
+.response-diff-head>span, .response-diff-row>span, .response-diff-row>code { padding:10px 12px; overflow-wrap:anywhere; min-width:0; }
+.response-diff-row { border-bottom:1px solid var(--response-line); }
+.response-diff-row>code { white-space:pre-wrap; font-family:inherit; border-left:1px solid var(--response-line); }
+.response-diff-row>span>code { display:block; color:var(--response-muted); }
+.response-diff-row strong { font-size:10px; font-weight:500; text-transform:uppercase; }
+.diff-added strong { color:var(--response-string); }.diff-removed strong { color:#d07870; }.diff-changed strong { color:var(--response-number); }
+.response-image { display:flex; align-items:center; flex-direction:column; gap:14px; background:var(--response-paper); padding:24px; color:var(--response-muted); font-size:11px; }
+.response-image img { max-width:100%; max-height:380px; object-fit:contain; border:1px solid var(--response-line); border-radius:5px; background:repeating-conic-gradient(#9aabba22 0% 25%,transparent 0% 50%) 50%/16px 16px; }
+.advanced-response button:disabled { opacity:.45; cursor:default; }
+.advanced-response button:focus-visible { outline:2px solid var(--response-accent); outline-offset:2px; }
+@media(max-width:750px) { .response-subtools select { max-width:100%; } .tree-key { max-width:130px; } .tree-actions { opacity:1; } .response-diff-table { overflow-x:auto; } .response-diff-head, .response-diff-row { min-width:540px; } }

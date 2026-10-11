@@ -1,0 +1,40 @@
+[package]
+name = "reqmas"
+version = "0.3.0"
+description = "Local desktop HTTP API client"
+authors = ["Reqmas"]
+edition = "2021"
+rust-version = "1.89"
+license = "MIT"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["arbitrary_precision"] }
+rusqlite = { version = "0.38", features = ["bundled"] }
+base64 = "0.22"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }
+tokio = { version = "1", features = ["sync", "macros", "net", "io-util", "time"] }
+url = "2"
+tauri-plugin-updater = "2"
+ring = "0.17"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+keyring = { version = "3.6.3", default-features = false, features = ["apple-native"] }
+zeroize = "1"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+keyring = { version = "3.6.3", default-features = false, features = ["sync-secret-service", "crypto-rust"] }
+zeroize = "1"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Security_Cryptography", "Win32_System_Memory", "Win32_Foundation", "Win32_UI_Shell", "Win32_UI_WindowsAndMessaging"] }
+
+[dev-dependencies]
+rcgen = "0.14"
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12"] }
+tauri = { version = "2", features = ["test"] }
+reqwest-updater = { package = "reqwest", version = "0.13", default-features = false, features = ["rustls-no-provider"] }
